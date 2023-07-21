@@ -22,10 +22,10 @@ export const CompanyCard = (props) => {
             pb: 3
           }}
         >
-          <Avatar
+          {/* <Avatar
             src={company.logo}
             variant="square"
-          />
+          /> */}
         </Box>
         <Typography
           align="center"
