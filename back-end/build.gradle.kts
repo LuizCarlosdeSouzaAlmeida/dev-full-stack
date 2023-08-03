@@ -20,7 +20,21 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+	// JPA API (javax.persistence)
+	implementation("javax.persistence:javax.persistence-api:2.2")
+
+	// Hibernate JPA implementation
+	implementation("org.hibernate:hibernate-core:5.5.7.Final")
+	implementation("org.hibernate:hibernate-entitymanager:5.5.7.Final")
+	implementation("org.hibernate:hibernate-validator:7.0.1.Final")
+
+	implementation("org.hsqldb:hsqldb:2.5.2")
+
+	// JDBC driver (if using Hibernate with a relational database)
+	implementation("com.h2database:h2:1.4.200")
 }
 
 tasks.withType<KotlinCompile> {

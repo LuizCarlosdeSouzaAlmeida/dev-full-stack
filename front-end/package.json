@@ -4,7 +4,6 @@
   "author": "Devias",
   "licence": "MIT",
   "homepage": "https://devias.io",
-  "private": false,
   "scripts": {
     "dev": "next",
     "build": "next build",
