@@ -5,5 +5,4 @@ import ufg.fullstack.couse.model.Course
 
 interface CourseRepository : CrudRepository<Course, Long> {
     fun findByName(name: String): Course?
-    fun findAllByOrderByAddedAtDesc(): Iterable<Course>
 }

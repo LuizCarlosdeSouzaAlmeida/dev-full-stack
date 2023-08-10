@@ -10,7 +10,7 @@ import ufg.fullstack.couse.repository.CourseRepository
 @RequestMapping("/api/course")
 class CourseController(private val repository: CourseRepository) {
     @GetMapping("/")
-    fun findAll() = repository.findAllByOrderByAddedAtDesc()
+    fun findAll() = repository.findAll()
 
     @GetMapping("/{name}")
     fun findOne(@PathVariable name: String) =
