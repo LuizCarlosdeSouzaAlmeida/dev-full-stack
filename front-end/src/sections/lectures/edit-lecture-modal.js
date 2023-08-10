@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Modal, TextField, Paper, Typography, Box, Chip } from "@mui/material";
 import { updateLectureById } from "src/api/lecture-service";
 
-const MyModal = ({ open, setOpen, lecture }) => {
+const MyModal = ({ open, setOpen, lecture, fetchLectureDetails }) => {
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -58,6 +58,7 @@ const MyModal = ({ open, setOpen, lecture }) => {
       ...formData,
     });
     console.log(formData);
+    fetchLectureDetails();
     handleClose();
   };
 

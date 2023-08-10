@@ -10,6 +10,7 @@ import {
   Stack,
   CircularProgress,
   Paper,
+  Backdrop,
 } from "@mui/material";
 import { Layout as DashboardLayout } from "src/layouts/dashboard/layout";
 import { useRouter } from "next/router";
@@ -39,12 +40,12 @@ const Page = () => {
     router.push("/");
   };
 
+  const fetchLectureDetails = async () => {
+    const lectureDetails = await getLectureById(lectureId);
+    console.log(lectureDetails);
+    setLecture(lectureDetails);
+  };
   useEffect(() => {
-    const fetchLectureDetails = async () => {
-      const lectureDetails = await getLectureById(lectureId);
-      console.log(lectureDetails);
-      setLecture(lectureDetails);
-    };
     if (lectureId) {
       fetchLectureDetails();
     }
@@ -96,7 +97,7 @@ const Page = () => {
               </Button>
             </div>
           </Stack>
-          {lecture && (
+          {lecture?.videoUrl && (
             <Paper sx={{ p: 4 }} elevation={4}>
               <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <iframe
@@ -111,13 +112,15 @@ const Page = () => {
               </Box>
             </Paper>
           )}
-          <Paper sx={{ w: 100, my: 4, p: 3 }} elevation={4}>
-            <Typography variant="body1" sx={{ mt: 3 }}>
-              {lecture?.text}
-            </Typography>
-          </Paper>
-          <Paper sx={{ w: 100, p: 3 }} elevation={4}>
-            {lecture?.downloadLinks.length && (
+          {lecture?.text && (
+            <Paper sx={{ w: 100, mt: 4, p: 3 }} elevation={4}>
+              <Typography variant="body1" sx={{ mt: 3 }}>
+                {lecture?.text}
+              </Typography>
+            </Paper>
+          )}
+          {lecture?.downloadLinks.length && (
+            <Paper sx={{ w: 100, mt: 4, p: 3 }} elevation={4}>
               <ul>
                 <li>
                   {lecture.downloadLinks.map((downloadLink) => (
@@ -125,14 +128,23 @@ const Page = () => {
                   ))}
                 </li>
               </ul>
-            )}
-          </Paper>
+            </Paper>
+          )}
         </Container>
       </Box>
-      {lecture && <EditLectureModal open={open} setOpen={setOpen} lecture={lecture} />}
+      {lecture && (
+        <EditLectureModal
+          open={open}
+          setOpen={setOpen}
+          lecture={lecture}
+          fetchLectureDetails={fetchLectureDetails}
+        />
+      )}
     </>
   ) : (
-    <CircularProgress />
+    <Backdrop sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }} open={true}>
+      <CircularProgress color="inherit" />
+    </Backdrop>
   );
 };
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal, TextField, Paper, Typography, Box, Chip } from "@mui/material";
 import { postLecture } from "src/api/lecture-service";
 
-const MyModal = ({ open, setOpen }) => {
+const MyModal = ({ open, setOpen, fetchLectures }) => {
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -45,12 +45,13 @@ const MyModal = ({ open, setOpen }) => {
     setFormData({ ...formData, downloadLinks: updatedLinks });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    postLecture({
+    await postLecture({
       ...formData,
     });
     console.log(formData);
+    fetchLectures();
     handleClose();
   };
 
@@ -92,7 +93,7 @@ const MyModal = ({ open, setOpen }) => {
           <TextField
             fullWidth
             label="Duration (hours)"
-            name="duration"
+            name="hours"
             value={formData.hours}
             onChange={handleChange}
             margin="normal"

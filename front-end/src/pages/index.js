@@ -30,12 +30,12 @@ const Page = () => {
     },
   ]);
 
-  useEffect(() => {
-    const fetchLectures = async () => {
-      const lecturesData = await getLectures();
-      setLectures(lecturesData);
-    };
+  const fetchLectures = async () => {
+    const lecturesData = await getLectures();
+    setLectures(lecturesData);
+  };
 
+  useEffect(() => {
     fetchLectures();
   }, []);
 
@@ -81,7 +81,7 @@ const Page = () => {
           </Stack>
         </Container>
       </Box>
-      <NewLectureModal open={open} setOpen={setOpen} />
+      <NewLectureModal open={open} setOpen={setOpen} fetchLectures={fetchLectures} />
     </>
   );
 };
