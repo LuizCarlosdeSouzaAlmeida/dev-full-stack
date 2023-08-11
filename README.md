@@ -6,26 +6,27 @@ Projeto para disciplina de desenvolvimento Full Stack UFG 2023/1
 
 - React
 - Mui
-- Typescript
-- Vite
-- pnpm
+- Javascrypt
+- Next
+- yarn
 
 Para rodar o projeto basta entrar na pasta e rodar os seguintes comandos:
 
 ```bash
-    # Instala o pnpm globalmente
-    npm i -g pnpm
-    # Instala as dependências do projeto
-    pnpm i
-    # Roda o projeto em modo desenvolvimento
-    pnpm dev
+    # Instala o projeto
+    yarn
+    # Inicia ambiente de Dev
+    yarn dev
+    
 ```
 
 ## Back End
 
 - Kotlin
 - Spring bot
+- JPA
 - REST
+- Postgresql
 
 Para rodar o projeto basta entrar na pasta e rodar os seguintes comandos:
 
