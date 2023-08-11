@@ -1,8 +1,8 @@
-package ufg.fullstack.couse.service
+package ufg.fullstack.course.service
 
 import org.springframework.stereotype.Service
-import ufg.fullstack.couse.model.Lecture
-import ufg.fullstack.couse.repository.LectureRepository
+import ufg.fullstack.course.model.Lecture
+import ufg.fullstack.course.repository.LectureRepository
 import org.springframework.data.repository.findByIdOrNull
 
 @Service

@@ -1,10 +1,10 @@
-package ufg.fullstack.couse.controller
+package ufg.fullstack.course.controller
 
 import org.springframework.http.HttpStatus.*
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
-import ufg.fullstack.couse.model.User
-import ufg.fullstack.couse.repository.UserRepository
+import ufg.fullstack.course.model.User
+import ufg.fullstack.course.repository.UserRepository
 
 @RestController
 @RequestMapping("/api/user")

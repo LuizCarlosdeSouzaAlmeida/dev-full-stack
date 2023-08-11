@@ -1,4 +1,4 @@
-package ufg.fullstack.couse.model
+package ufg.fullstack.course.model
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

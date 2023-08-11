@@ -1,9 +1,9 @@
-package ufg.fullstack.couse.controller
+package ufg.fullstack.course.controller
 
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import ufg.fullstack.couse.model.Lecture
-import ufg.fullstack.couse.service.LectureService
+import ufg.fullstack.course.model.Lecture
+import ufg.fullstack.course.service.LectureService
 
 @RestController
 @RequestMapping("/api/lecture")

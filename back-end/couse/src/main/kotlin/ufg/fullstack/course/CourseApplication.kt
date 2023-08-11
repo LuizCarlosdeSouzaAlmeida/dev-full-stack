@@ -1,4 +1,4 @@
-package ufg.fullstack.couse
+package ufg.fullstack.course
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
